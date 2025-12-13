@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+/* Custom theme extensions */
+@theme {
+  --color-primary-50: #f0f9ff;
+  --color-primary-100: #e0f2fe;
+  --color-primary-200: #bae6fd;
+  --color-primary-300: #7dd3fc;
+  --color-primary-400: #38bdf8;
+  --color-primary-500: #0ea5e9;
+  --color-primary-600: #0284c7;
+  --color-primary-700: #0369a1;
+  --color-primary-800: #075985;
+  --color-primary-900: #0c4a6e;
+
+  --color-warm-50: #fefce8;
+  --color-warm-100: #fef9c3;
+  --color-warm-200: #fef08a;
+  --color-warm-300: #fde047;
+  --color-warm-400: #facc15;
+  --color-warm-500: #eab308;
+
+  --font-family-sans: 'Inter', system-ui, sans-serif;
+  --font-family-display: 'Inter', system-ui, sans-serif;
+}
+
+/* Source file scanning */
+@source "../../../src/views/**/*.ejs";
+
+/* Custom component classes */
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 transition-all duration-200 ease-in-out;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 border border-gray-300 text-base font-medium rounded-lg text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 transition-all duration-200 ease-in-out;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl shadow-lg p-8;
+  }
+
+  .quote-text {
+    @apply text-2xl md:text-3xl font-light text-gray-700 italic leading-relaxed;
+  }
+}
+
+/* Animations */
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out forwards;
+  }
+
+  .animate-pulse-soft {
+    animation: pulseSoft 3s infinite;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseSoft {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
