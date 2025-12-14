@@ -6,143 +6,151 @@
   <title>Upload Your Resume - JobAgent</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link href="/css/output.css" rel="stylesheet">
 </head>
-<body class="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
+<body class="min-h-screen bg-dark-950 text-stone-100 overflow-x-hidden">
 
-  <!-- Subtle background pattern -->
+  <!-- Animated background gradients -->
   <div class="fixed inset-0 overflow-hidden pointer-events-none">
-    <div class="absolute -top-40 -right-40 w-80 h-80 bg-primary-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse-soft"></div>
-    <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-warm-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse-soft" style="animation-delay: 1s;"></div>
+    <div class="absolute -top-40 -right-40 w-[500px] h-[500px] bg-purple-500/20 rounded-full filter blur-[150px] animate-pulse-soft"></div>
+    <div class="absolute -bottom-40 -left-40 w-[400px] h-[400px] bg-accent-500/15 rounded-full filter blur-[150px] animate-pulse-soft" style="animation-delay: 2s;"></div>
+    <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:60px_60px]"></div>
   </div>
 
   <!-- Main content -->
-  <div class="relative min-h-screen flex flex-col items-center justify-center px-4 py-12">
+  <div class="relative min-h-screen flex flex-col">
 
-    <!-- Back link -->
-    <a href="/" class="absolute top-6 left-6 flex items-center text-gray-600 hover:text-gray-800 transition-colors">
-      <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-      </svg>
-      Back
-    </a>
+    <!-- Header -->
+    <header class="w-full py-6 px-6 md:px-12 animate-fade-in">
+      <div class="max-w-7xl mx-auto flex items-center justify-between">
+        <a href="/" class="flex items-center space-x-3 group">
+          <div class="w-10 h-10 bg-gradient-to-br from-accent-400 to-purple-500 rounded-xl flex items-center justify-center group-hover:scale-105 transition-transform">
+            <svg class="w-6 h-6 text-dark-950" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+            </svg>
+          </div>
+          <span class="text-xl font-bold text-stone-100">JobAgent</span>
+        </a>
 
-    <!-- Logo/Brand -->
-    <div class="mb-6 animate-fade-in">
-      <div class="flex items-center space-x-3">
-        <div class="w-10 h-10 bg-gradient-to-br from-primary-500 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg">
-          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+        <!-- Back button -->
+        <a href="/" class="flex items-center text-stone-400 hover:text-stone-100 transition-colors text-sm font-medium group">
+          <svg class="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
           </svg>
-        </div>
-        <span class="text-xl font-semibold text-gray-800">JobAgent</span>
+          Back
+        </a>
       </div>
-    </div>
+    </header>
 
-    <!-- Main card -->
-    <div class="w-full max-w-xl animate-slide-up" style="animation-delay: 0.2s;">
-      <div class="bg-white/80 backdrop-blur-lg rounded-3xl shadow-xl p-8 md:p-10 border border-white/50">
+    <!-- Upload section -->
+    <main class="flex-1 flex items-center justify-center px-6 py-12">
+      <div class="w-full max-w-xl">
 
-        <!-- Header -->
-        <div class="text-center mb-8">
-          <h1 class="text-2xl md:text-3xl font-semibold text-gray-800 mb-3">
-            Share Your Story
-          </h1>
-          <p class="text-gray-600">
-            Upload your resume and let us find opportunities that match your unique journey.
+        <!-- Progress steps -->
+        <div class="flex items-center justify-center space-x-4 text-sm mb-12 animate-fade-in">
+          <div class="flex items-center text-accent-400">
+            <div class="w-8 h-8 rounded-full bg-accent-500/20 border border-accent-500 text-accent-400 flex items-center justify-center font-semibold text-sm">1</div>
+            <span class="ml-2 font-medium">Upload</span>
+          </div>
+          <div class="w-12 h-px bg-stone-700"></div>
+          <div class="flex items-center text-stone-500">
+            <div class="w-8 h-8 rounded-full bg-dark-700 border border-stone-600 flex items-center justify-center font-medium text-sm">2</div>
+            <span class="ml-2">Analyze</span>
+          </div>
+          <div class="w-12 h-px bg-stone-700"></div>
+          <div class="flex items-center text-stone-500">
+            <div class="w-8 h-8 rounded-full bg-dark-700 border border-stone-600 flex items-center justify-center font-medium text-sm">3</div>
+            <span class="ml-2">Results</span>
+          </div>
+        </div>
+
+        <!-- Main card -->
+        <div class="card glow-accent animate-slide-up">
+
+          <!-- Header -->
+          <div class="text-center mb-8">
+            <h1 class="text-2xl md:text-3xl font-bold text-stone-100 mb-3">
+              Share Your Story
+            </h1>
+            <p class="text-stone-400">
+              Upload your resume and let us find your next opportunity.
+            </p>
+          </div>
+
+          <!-- Upload form -->
+          <form id="uploadForm" action="/analyze" method="POST" enctype="multipart/form-data">
+
+            <!-- Drop zone -->
+            <div id="dropZone" class="relative border-2 border-dashed border-stone-600 rounded-2xl p-10 text-center hover:border-accent-500/50 hover:bg-accent-500/5 transition-all duration-300 cursor-pointer group">
+              <input type="file" id="resumeFile" name="resume" accept=".pdf,.docx,.txt" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer" required>
+
+              <div id="uploadPrompt">
+                <div class="w-16 h-16 bg-gradient-to-br from-accent-500/20 to-purple-500/20 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                  <svg class="w-8 h-8 text-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+                  </svg>
+                </div>
+                <p class="text-stone-200 font-medium mb-1">Drop your resume here</p>
+                <p class="text-stone-500 text-sm mb-4">or click to browse</p>
+                <div class="flex items-center justify-center space-x-3 text-xs">
+                  <span class="px-3 py-1.5 bg-dark-700 text-stone-400 rounded-full border border-stone-600">PDF</span>
+                  <span class="px-3 py-1.5 bg-dark-700 text-stone-400 rounded-full border border-stone-600">DOCX</span>
+                  <span class="px-3 py-1.5 bg-dark-700 text-stone-400 rounded-full border border-stone-600">TXT</span>
+                  <span class="text-stone-600">|</span>
+                  <span class="text-stone-500">Max 5MB</span>
+                </div>
+              </div>
+
+              <!-- File selected state -->
+              <div id="fileSelected" class="hidden">
+                <div class="w-16 h-16 bg-success-500/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <svg class="w-8 h-8 text-success-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                </div>
+                <p class="text-stone-200 font-medium mb-1" id="fileName">resume.pdf</p>
+                <p class="text-stone-500 text-sm">Click to change file</p>
+              </div>
+            </div>
+
+            <!-- Encouragement message -->
+            <div class="mt-6 p-4 bg-dark-700/50 rounded-xl border border-stone-600/30">
+              <div class="flex items-start">
+                <div class="flex-shrink-0">
+                  <svg class="w-5 h-5 text-purple-400 mt-0.5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"></path>
+                  </svg>
+                </div>
+                <p class="ml-3 text-sm text-stone-400">
+                  <span class="font-medium text-stone-300">You've got this!</span> Every career has its own rhythm. We'll find roles that value your specific experience.
+                </p>
+              </div>
+            </div>
+
+            <!-- Submit button -->
+            <button type="submit" id="submitBtn" class="w-full mt-6 btn-primary text-base py-4 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none disabled:hover:scale-100">
+              <span id="btnText">Find My Opportunities</span>
+              <span id="btnLoading" class="hidden items-center">
+                <svg class="animate-spin -ml-1 mr-3 h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                  <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                Analyzing your resume...
+              </span>
+            </button>
+
+          </form>
+
+          <!-- Privacy note -->
+          <p class="text-center text-xs text-stone-500 mt-4">
+            Your resume is processed securely and not stored permanently.
           </p>
+
         </div>
 
-        <!-- Upload form -->
-        <form id="uploadForm" action="/analyze" method="POST" enctype="multipart/form-data">
-
-          <!-- Drop zone -->
-          <div id="dropZone" class="relative border-2 border-dashed border-gray-300 rounded-2xl p-8 text-center hover:border-primary-400 hover:bg-primary-50/50 transition-all duration-200 cursor-pointer">
-            <input type="file" id="resumeFile" name="resume" accept=".pdf,.docx,.txt" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer" required>
-
-            <div id="uploadPrompt">
-              <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg class="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
-                </svg>
-              </div>
-              <p class="text-gray-700 font-medium mb-1">Drop your resume here</p>
-              <p class="text-gray-500 text-sm mb-3">or click to browse</p>
-              <div class="flex items-center justify-center space-x-2 text-xs text-gray-400">
-                <span class="px-2 py-1 bg-gray-100 rounded">PDF</span>
-                <span class="px-2 py-1 bg-gray-100 rounded">DOCX</span>
-                <span class="px-2 py-1 bg-gray-100 rounded">TXT</span>
-                <span class="text-gray-300">|</span>
-                <span>Max 5MB</span>
-              </div>
-            </div>
-
-            <!-- File selected state -->
-            <div id="fileSelected" class="hidden">
-              <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                </svg>
-              </div>
-              <p class="text-gray-700 font-medium mb-1" id="fileName">resume.pdf</p>
-              <p class="text-gray-500 text-sm">Click to change file</p>
-            </div>
-          </div>
-
-          <!-- Encouragement message -->
-          <div class="mt-6 p-4 bg-warm-50 rounded-xl border border-warm-200">
-            <div class="flex items-start">
-              <div class="flex-shrink-0">
-                <svg class="w-5 h-5 text-warm-500 mt-0.5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"></path>
-                </svg>
-              </div>
-              <p class="ml-3 text-sm text-gray-600">
-                <span class="font-medium text-gray-700">You've got this!</span> Every career has its own rhythm. We'll help you find roles that value your specific experience level and skills.
-              </p>
-            </div>
-          </div>
-
-          <!-- Submit button -->
-          <button type="submit" id="submitBtn" class="w-full mt-6 btn-primary text-lg py-4 shadow-lg shadow-primary-500/25 hover:shadow-xl hover:shadow-primary-500/30 transform hover:-translate-y-0.5 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none">
-            <span id="btnText">Find My Opportunities</span>
-            <span id="btnLoading" class="hidden items-center">
-              <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-              </svg>
-              Analyzing your resume...
-            </span>
-          </button>
-
-        </form>
-
-        <!-- Privacy note -->
-        <p class="text-center text-xs text-gray-400 mt-4">
-          Your resume is processed securely and not stored permanently.
-        </p>
-
       </div>
-    </div>
-
-    <!-- Steps indicator -->
-    <div class="mt-8 flex items-center space-x-4 text-sm animate-fade-in" style="animation-delay: 0.4s;">
-      <div class="flex items-center text-primary-600">
-        <div class="w-8 h-8 rounded-full bg-primary-600 text-white flex items-center justify-center font-medium">1</div>
-        <span class="ml-2 font-medium">Upload</span>
-      </div>
-      <div class="w-8 h-px bg-gray-300"></div>
-      <div class="flex items-center text-gray-400">
-        <div class="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center font-medium">2</div>
-        <span class="ml-2">Analyze</span>
-      </div>
-      <div class="w-8 h-px bg-gray-300"></div>
-      <div class="flex items-center text-gray-400">
-        <div class="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center font-medium">3</div>
-        <span class="ml-2">Results</span>
-      </div>
-    </div>
+    </main>
 
   </div>
 
@@ -160,17 +168,17 @@
     // Drag and drop handlers
     dropZone.addEventListener('dragover', (e) => {
       e.preventDefault();
-      dropZone.classList.add('border-primary-400', 'bg-primary-50');
+      dropZone.classList.add('border-accent-500', 'bg-accent-500/10');
     });
 
     dropZone.addEventListener('dragleave', (e) => {
       e.preventDefault();
-      dropZone.classList.remove('border-primary-400', 'bg-primary-50');
+      dropZone.classList.remove('border-accent-500', 'bg-accent-500/10');
     });
 
     dropZone.addEventListener('drop', (e) => {
       e.preventDefault();
-      dropZone.classList.remove('border-primary-400', 'bg-primary-50');
+      dropZone.classList.remove('border-accent-500', 'bg-accent-500/10');
 
       const files = e.dataTransfer.files;
       if (files.length > 0) {

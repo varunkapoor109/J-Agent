@@ -6,137 +6,140 @@
   <title>Your Opportunities - JobAgent</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link href="/css/output.css" rel="stylesheet">
 </head>
-<body class="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
+<body class="min-h-screen bg-dark-950 text-stone-100">
 
-  <!-- Subtle background -->
+  <!-- Animated background -->
   <div class="fixed inset-0 overflow-hidden pointer-events-none">
-    <div class="absolute -top-40 -right-40 w-80 h-80 bg-primary-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
-    <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-warm-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+    <div class="absolute -top-40 -right-40 w-[500px] h-[500px] bg-accent-500/10 rounded-full filter blur-[150px] animate-pulse-soft"></div>
+    <div class="absolute -bottom-40 -left-40 w-[400px] h-[400px] bg-purple-500/10 rounded-full filter blur-[150px] animate-pulse-soft" style="animation-delay: 2s;"></div>
+    <div class="absolute top-1/2 right-0 w-[300px] h-[300px] bg-teal-500/10 rounded-full filter blur-[150px] animate-pulse-soft" style="animation-delay: 4s;"></div>
+    <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-[size:60px_60px]"></div>
   </div>
 
   <div class="relative min-h-screen">
     <!-- Header -->
-    <header class="bg-white/80 backdrop-blur-lg border-b border-gray-200 sticky top-0 z-50">
-      <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-        <a href="/" class="flex items-center space-x-3">
-          <div class="w-10 h-10 bg-gradient-to-br from-primary-500 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg">
-            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+    <header class="bg-dark-900/80 backdrop-blur-xl border-b border-stone-800 sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        <a href="/" class="flex items-center space-x-3 group">
+          <div class="w-10 h-10 bg-gradient-to-br from-accent-400 to-purple-500 rounded-xl flex items-center justify-center group-hover:scale-105 transition-transform">
+            <svg class="w-6 h-6 text-dark-950" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
             </svg>
           </div>
-          <span class="text-xl font-semibold text-gray-800">JobAgent</span>
+          <span class="text-xl font-bold text-stone-100">JobAgent</span>
         </a>
 
-        <a href="/upload" class="btn-secondary text-sm py-2 px-4">
+        <a href="/upload" class="btn-secondary text-sm py-2.5 px-5">
           <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path>
           </svg>
-          Upload New Resume
+          New Search
         </a>
       </div>
     </header>
 
     <!-- Main content -->
-    <main class="max-w-6xl mx-auto px-4 py-8">
+    <main class="max-w-7xl mx-auto px-6 py-10">
+
+      <!-- Progress steps - completed -->
+      <div class="flex items-center justify-center space-x-4 text-sm mb-10 animate-fade-in">
+        <div class="flex items-center text-success-500">
+          <div class="w-8 h-8 rounded-full bg-success-500/20 border border-success-500 flex items-center justify-center">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+          </div>
+          <span class="ml-2 font-medium">Upload</span>
+        </div>
+        <div class="w-12 h-px bg-success-500/50"></div>
+        <div class="flex items-center text-success-500">
+          <div class="w-8 h-8 rounded-full bg-success-500/20 border border-success-500 flex items-center justify-center">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+          </div>
+          <span class="ml-2 font-medium">Analyze</span>
+        </div>
+        <div class="w-12 h-px bg-success-500/50"></div>
+        <div class="flex items-center text-accent-400">
+          <div class="w-8 h-8 rounded-full bg-accent-500/20 border border-accent-500 text-accent-400 flex items-center justify-center font-semibold text-sm">3</div>
+          <span class="ml-2 font-medium">Results</span>
+        </div>
+      </div>
 
       <!-- Summary section -->
-      <div class="bg-white/80 backdrop-blur-lg rounded-2xl shadow-lg p-6 mb-8 border border-white/50 animate-fade-in">
-        <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+      <div class="card mb-10 animate-slide-up">
+        <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
           <div>
-            <h1 class="text-2xl md:text-3xl font-semibold text-gray-800 mb-2">
-              Great news! We found opportunities for you
+            <h1 class="text-2xl md:text-3xl font-bold text-stone-100 mb-2">
+              We found opportunities for you
             </h1>
-            <p class="text-gray-600">
-              Based on your experience as a <span class="font-medium text-primary-600"><%= resumeData.primaryRole?.title || 'Professional' %></span>
-              with <span class="font-medium"><%= resumeData.totalYearsExperience || 'several' %> years</span> of experience
+            <p class="text-stone-400">
+              Based on your experience as a
+              <span class="text-accent-400 font-medium"><%= resumeData.primaryRole?.title || 'Professional' %></span>
+              with <span class="text-stone-200 font-medium"><%= resumeData.totalYearsExperience || 'several' %> years</span> of experience
             </p>
           </div>
-          <div class="mt-4 md:mt-0 flex items-center space-x-4">
-            <div class="text-center px-4 py-2 bg-green-50 rounded-lg">
-              <p class="text-2xl font-bold text-green-600"><%= recommended.length %></p>
-              <p class="text-xs text-green-700">Recommended</p>
+          <div class="flex items-center gap-4">
+            <div class="text-center px-5 py-3 bg-success-500/10 border border-success-500/30 rounded-xl">
+              <p class="text-3xl font-bold text-success-500"><%= recommended.length %></p>
+              <p class="text-xs text-success-400 font-medium">Recommended</p>
             </div>
-            <div class="text-center px-4 py-2 bg-blue-50 rounded-lg">
-              <p class="text-2xl font-bold text-blue-600"><%= worthExploring.length %></p>
-              <p class="text-xs text-blue-700">Worth Exploring</p>
+            <div class="text-center px-5 py-3 bg-purple-500/10 border border-purple-500/30 rounded-xl">
+              <p class="text-3xl font-bold text-purple-400"><%= worthExploring.length %></p>
+              <p class="text-xs text-purple-300 font-medium">Worth Exploring</p>
             </div>
           </div>
         </div>
 
         <!-- Skills matched -->
         <% if (resumeData.skills?.technical?.length > 0) { %>
-        <div class="mt-4 pt-4 border-t border-gray-100">
-          <p class="text-sm text-gray-500 mb-2">Your top skills:</p>
+        <div class="mt-6 pt-6 border-t border-stone-700/50">
+          <p class="text-sm text-stone-500 mb-3">Your top skills:</p>
           <div class="flex flex-wrap gap-2">
             <% resumeData.skills.technical.slice(0, 8).forEach(skill => { %>
-              <span class="px-3 py-1 bg-primary-50 text-primary-700 rounded-full text-sm font-medium"><%= skill %></span>
+              <span class="px-3 py-1.5 bg-dark-700 text-stone-300 rounded-full text-sm border border-stone-600/50"><%= skill %></span>
             <% }) %>
           </div>
         </div>
         <% } %>
       </div>
 
-      <!-- Encouraging message for career pivoters -->
+      <!-- Career pivot message -->
       <% if (resumeData.totalYearsExperience > 5 && (resumeData.experienceByRole?.[resumeData.primaryRole?.type]?.years || 0) < 3) { %>
-      <div class="bg-warm-50 border border-warm-200 rounded-xl p-4 mb-8 animate-fade-in" style="animation-delay: 0.1s;">
+      <div class="bg-purple-500/10 border border-purple-500/30 rounded-xl p-4 mb-10 animate-fade-in" style="animation-delay: 0.1s;">
         <div class="flex items-start">
           <div class="flex-shrink-0">
-            <svg class="w-5 h-5 text-warm-500 mt-0.5" fill="currentColor" viewBox="0 0 24 24">
+            <svg class="w-5 h-5 text-purple-400 mt-0.5" fill="currentColor" viewBox="0 0 24 24">
               <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"></path>
             </svg>
           </div>
-          <p class="ml-3 text-sm text-gray-700">
-            <span class="font-medium">Career transitions take courage!</span> We've focused on roles that match your current experience level in this field. Your transferable skills from previous roles will make you a strong candidate.
+          <p class="ml-3 text-sm text-stone-300">
+            <span class="font-semibold text-purple-300">Career transitions take courage!</span> We've focused on roles matching your current experience level in this field. Your transferable skills make you a strong candidate.
           </p>
         </div>
       </div>
       <% } %>
 
-      <!-- Steps indicator -->
-      <div class="flex items-center justify-center space-x-4 text-sm mb-8 animate-fade-in" style="animation-delay: 0.15s;">
-        <div class="flex items-center text-gray-400">
-          <div class="w-8 h-8 rounded-full bg-green-100 text-green-600 flex items-center justify-center font-medium">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg>
-          </div>
-          <span class="ml-2">Upload</span>
-        </div>
-        <div class="w-8 h-px bg-green-300"></div>
-        <div class="flex items-center text-gray-400">
-          <div class="w-8 h-8 rounded-full bg-green-100 text-green-600 flex items-center justify-center font-medium">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg>
-          </div>
-          <span class="ml-2">Analyze</span>
-        </div>
-        <div class="w-8 h-px bg-green-300"></div>
-        <div class="flex items-center text-primary-600">
-          <div class="w-8 h-8 rounded-full bg-primary-600 text-white flex items-center justify-center font-medium">3</div>
-          <span class="ml-2 font-medium">Results</span>
-        </div>
-      </div>
-
       <!-- Recommended Jobs Section -->
       <% if (recommended.length > 0) { %>
-      <section class="mb-10 animate-slide-up" style="animation-delay: 0.2s;">
+      <section class="mb-12 animate-slide-up" style="animation-delay: 0.2s;">
         <div class="flex items-center mb-6">
-          <div class="w-10 h-10 bg-green-100 rounded-xl flex items-center justify-center mr-3">
-            <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div class="w-10 h-10 bg-success-500/10 rounded-xl flex items-center justify-center mr-3 border border-success-500/30">
+            <svg class="w-5 h-5 text-success-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
           </div>
           <div>
-            <h2 class="text-xl font-semibold text-gray-800">Recommended</h2>
-            <p class="text-sm text-gray-500">Best matches with 90-95% confidence</p>
+            <h2 class="text-xl font-bold text-stone-100">Recommended</h2>
+            <p class="text-sm text-stone-500">Best matches with 90-95% confidence</p>
           </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           <% recommended.forEach(job => { %>
             <%- include('partials/jobCard', { job, type: 'recommended' }) %>
           <% }) %>
@@ -146,20 +149,20 @@
 
       <!-- Worth Exploring Section -->
       <% if (worthExploring.length > 0) { %>
-      <section class="mb-10 animate-slide-up" style="animation-delay: 0.3s;">
+      <section class="mb-12 animate-slide-up" style="animation-delay: 0.3s;">
         <div class="flex items-center mb-6">
-          <div class="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center mr-3">
-            <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div class="w-10 h-10 bg-purple-500/10 rounded-xl flex items-center justify-center mr-3 border border-purple-500/30">
+            <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
             </svg>
           </div>
           <div>
-            <h2 class="text-xl font-semibold text-gray-800">Worth Exploring</h2>
-            <p class="text-sm text-gray-500">Good matches with 70-89% confidence</p>
+            <h2 class="text-xl font-bold text-stone-100">Worth Exploring</h2>
+            <p class="text-sm text-stone-500">Good matches with 70-89% confidence</p>
           </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           <% worthExploring.forEach(job => { %>
             <%- include('partials/jobCard', { job, type: 'exploring' }) %>
           <% }) %>
@@ -169,23 +172,23 @@
 
       <!-- No results -->
       <% if (recommended.length === 0 && worthExploring.length === 0) { %>
-      <div class="text-center py-12">
-        <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
-          <svg class="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div class="text-center py-16">
+        <div class="w-20 h-20 bg-dark-700 rounded-2xl flex items-center justify-center mx-auto mb-6">
+          <svg class="w-10 h-10 text-stone-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
           </svg>
         </div>
-        <h3 class="text-lg font-medium text-gray-800 mb-2">No matches found yet</h3>
-        <p class="text-gray-600 mb-4">We couldn't find strong matches right now. Try uploading an updated resume with more details.</p>
+        <h3 class="text-xl font-bold text-stone-200 mb-2">No strong matches found</h3>
+        <p class="text-stone-400 mb-6 max-w-md mx-auto">We couldn't find matches right now. Try uploading an updated resume with more details about your experience.</p>
         <a href="/upload" class="btn-primary">Try Again</a>
       </div>
       <% } %>
 
       <!-- Encouragement footer -->
-      <div class="text-center py-8 border-t border-gray-200 mt-8 animate-fade-in" style="animation-delay: 0.4s;">
-        <p class="text-gray-500 text-sm mb-2">Remember:</p>
-        <p class="text-gray-700 italic">"The only way to do great work is to love what you do. Keep searching!"</p>
-        <p class="text-gray-400 text-xs mt-1">- Steve Jobs</p>
+      <div class="text-center py-10 border-t border-stone-800 mt-8 animate-fade-in" style="animation-delay: 0.4s;">
+        <p class="text-stone-500 text-sm mb-2">Remember:</p>
+        <p class="text-stone-300 text-lg italic font-light">"The only way to do great work is to love what you do."</p>
+        <p class="text-stone-600 text-xs mt-2">— Steve Jobs</p>
       </div>
 
     </main>
