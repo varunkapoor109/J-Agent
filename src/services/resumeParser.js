@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const pdfParse = require('pdf-parse');
+const PDFParser = require('pdf2json');
 const mammoth = require('mammoth');
 
 /**
@@ -101,12 +102,60 @@ class ResumeParser {
   }
 
   /**
-   * Parse PDF file
+   * Parse PDF file - tries multiple methods
    */
   async parsePDF(filePath) {
-    const dataBuffer = fs.readFileSync(filePath);
-    const data = await pdfParse(dataBuffer);
-    return data.text;
+    // Method 1: Try pdf-parse first
+    try {
+      const dataBuffer = fs.readFileSync(filePath);
+      const data = await pdfParse(dataBuffer);
+      // Check if we got meaningful text (not just whitespace)
+      const cleanText = data.text.replace(/\s+/g, ' ').trim();
+      if (cleanText.length > 50) {
+        console.log('PDF parsed with pdf-parse, text length:', cleanText.length);
+        return data.text;
+      }
+    } catch (err) {
+      console.log('pdf-parse failed, trying pdf2json:', err.message);
+    }
+
+    // Method 2: Try pdf2json as fallback
+    return new Promise((resolve, reject) => {
+      const pdfParser = new PDFParser();
+
+      pdfParser.on('pdfParser_dataReady', (pdfData) => {
+        try {
+          // Extract text from all pages
+          let text = '';
+          if (pdfData.Pages) {
+            pdfData.Pages.forEach(page => {
+              if (page.Texts) {
+                page.Texts.forEach(textItem => {
+                  if (textItem.R) {
+                    textItem.R.forEach(r => {
+                      if (r.T) {
+                        text += decodeURIComponent(r.T) + ' ';
+                      }
+                    });
+                  }
+                });
+                text += '\n';
+              }
+            });
+          }
+          console.log('PDF parsed with pdf2json, text length:', text.length);
+          resolve(text);
+        } catch (err) {
+          reject(err);
+        }
+      });
+
+      pdfParser.on('pdfParser_dataError', (errData) => {
+        reject(new Error(errData.parserError));
+      });
+
+      pdfParser.loadPDF(filePath);
+    });
   }
 
   /**

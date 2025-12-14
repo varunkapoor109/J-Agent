@@ -27,7 +27,8 @@
     "express": "^5.2.1",
     "mammoth": "^1.11.0",
     "multer": "^2.0.2",
-    "pdf-parse": "^2.4.5"
+    "pdf-parse": "^1.1.1",
+    "pdf2json": "^4.0.0"
   },
   "devDependencies": {
     "@tailwindcss/cli": "^4.1.18",

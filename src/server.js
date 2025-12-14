@@ -93,6 +93,10 @@ app.post('/analyze', upload.single('resume'), async (req, res) => {
       primaryRole: resumeData.primaryRole?.title,
       totalYears: resumeData.totalYearsExperience
     });
+    // Debug: Show extracted text preview
+    console.log('--- RAW TEXT PREVIEW (first 500 chars) ---');
+    console.log(resumeData.rawText?.substring(0, 500));
+    console.log('--- END PREVIEW ---');
 
     // Step 2: Search for relevant jobs
     const jobs = await jobSearch.searchJobs(resumeData);
