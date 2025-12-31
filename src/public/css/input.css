@@ -1,0 +1,172 @@
+@import "tailwindcss";
+
+/* Custom theme - Candycode inspired dark sophisticated palette */
+@theme {
+  /* Dark backgrounds */
+  --color-dark-950: #0a0a0a;
+  --color-dark-900: #0c0c0c;
+  --color-dark-800: #141414;
+  --color-dark-700: #1c1c1c;
+  --color-dark-600: #262626;
+  --color-dark-500: #404040;
+
+  /* Accent - Vibrant coral/red */
+  --color-accent-500: #ff6b6b;
+  --color-accent-400: #ff8585;
+  --color-accent-300: #ffa0a0;
+
+  /* Secondary accent - Electric purple */
+  --color-purple-500: #a855f7;
+  --color-purple-400: #c084fc;
+  --color-purple-300: #d8b4fe;
+
+  /* Tertiary - Teal/Cyan */
+  --color-teal-500: #14b8a6;
+  --color-teal-400: #2dd4bf;
+  --color-teal-300: #5eead4;
+
+  /* Success green */
+  --color-success-500: #6FC5A1;
+  --color-success-400: #86EFAC;
+
+  /* Warm neutrals for text */
+  --color-stone-50: #fafaf9;
+  --color-stone-100: #f5f5f4;
+  --color-stone-200: #e7e5e4;
+  --color-stone-300: #d6d3d1;
+  --color-stone-400: #a8a29e;
+  --color-stone-500: #78716c;
+
+  /* Typography */
+  --font-family-sans: 'Inter', system-ui, sans-serif;
+  --font-family-display: 'Inter', system-ui, sans-serif;
+}
+
+/* Source file scanning */
+@source "../../../src/views/**/*.ejs";
+
+/* Custom component classes */
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-8 py-4 text-base font-semibold rounded-full text-dark-950 bg-gradient-to-r from-accent-400 to-purple-400 hover:from-accent-300 hover:to-purple-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-dark-900 focus:ring-accent-500 transition-all duration-300 ease-out transform hover:scale-105;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 border border-stone-500/30 text-base font-medium rounded-full text-stone-200 bg-dark-700/50 hover:bg-dark-600 hover:border-stone-400/50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-dark-900 focus:ring-accent-500 transition-all duration-300 ease-out backdrop-blur-sm;
+  }
+
+  .card {
+    @apply bg-dark-800/80 backdrop-blur-xl rounded-3xl border border-stone-500/10 p-8;
+  }
+
+  .card-hover {
+    @apply bg-dark-800/80 backdrop-blur-xl rounded-3xl border border-stone-500/10 p-6 transition-all duration-300 ease-out hover:border-accent-500/30 hover:bg-dark-700/80 hover:scale-[1.02];
+  }
+
+  .quote-text {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold text-stone-100 leading-tight tracking-tight;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-accent-400 via-purple-400 to-teal-400 bg-clip-text text-transparent;
+  }
+
+  .glow-accent {
+    box-shadow: 0 0 60px rgba(255, 107, 107, 0.15), 0 0 100px rgba(168, 85, 247, 0.1);
+  }
+
+  .glow-border {
+    @apply border border-accent-500/20;
+    box-shadow: inset 0 0 20px rgba(255, 107, 107, 0.05);
+  }
+}
+
+/* Animations */
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out forwards;
+  }
+
+  .animate-pulse-soft {
+    animation: pulseSoft 4s ease-in-out infinite;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-glow {
+    animation: glow 3s ease-in-out infinite;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseSoft {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(255, 107, 107, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(255, 107, 107, 0.4), 0 0 60px rgba(168, 85, 247, 0.2);
+  }
+}
+
+/* Scrollbar styling for dark theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0c0c0c;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #404040;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #525252;
+}

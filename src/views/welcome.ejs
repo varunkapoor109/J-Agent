@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JobAgent - Your Career Journey Companion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="/css/output.css" rel="stylesheet">
+</head>
+<body class="min-h-screen bg-dark-950 text-stone-100 overflow-x-hidden">
+
+  <!-- Animated background gradients -->
+  <div class="fixed inset-0 overflow-hidden pointer-events-none">
+    <!-- Top right glow -->
+    <div class="absolute -top-40 -right-40 w-[600px] h-[600px] bg-accent-500/20 rounded-full filter blur-[150px] animate-pulse-soft"></div>
+    <!-- Bottom left glow -->
+    <div class="absolute -bottom-40 -left-40 w-[500px] h-[500px] bg-purple-500/20 rounded-full filter blur-[150px] animate-pulse-soft" style="animation-delay: 2s;"></div>
+    <!-- Center subtle glow -->
+    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-teal-500/10 rounded-full filter blur-[200px] animate-pulse-soft" style="animation-delay: 4s;"></div>
+    <!-- Grid overlay -->
+    <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:60px_60px]"></div>
+  </div>
+
+  <!-- Main content -->
+  <div class="relative min-h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="w-full py-6 px-6 md:px-12 animate-fade-in">
+      <div class="max-w-7xl mx-auto flex items-center justify-between">
+        <div class="flex items-center space-x-3">
+          <div class="w-10 h-10 bg-gradient-to-br from-accent-400 to-purple-500 rounded-xl flex items-center justify-center">
+            <svg class="w-6 h-6 text-dark-950" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+            </svg>
+          </div>
+          <span class="text-xl font-bold text-stone-100">JobAgent</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero section -->
+    <main class="flex-1 flex items-center justify-center px-6 py-12 md:py-20">
+      <div class="max-w-5xl mx-auto text-center">
+
+        <!-- Badge -->
+        <div class="inline-flex items-center px-4 py-2 rounded-full bg-dark-800/80 border border-stone-500/20 mb-8 animate-fade-in">
+          <span class="w-2 h-2 bg-success-500 rounded-full mr-2 animate-pulse"></span>
+          <span class="text-sm text-stone-400">AI-Powered Job Matching</span>
+        </div>
+
+        <!-- Main headline -->
+        <h1 class="quote-text mb-8 animate-slide-up">
+          <span class="text-gradient">"Yesterday is history,</span><br>
+          <span class="text-stone-100">tomorrow is a mystery,</span><br>
+          <span class="text-stone-100">today is a gift.</span><br>
+          <span class="text-gradient">That's why it's called the present."</span>
+        </h1>
+
+        <p class="text-stone-500 text-sm mb-12 animate-slide-up" style="animation-delay: 0.1s;">
+          — Master Oogway
+        </p>
+
+        <!-- Subheadline -->
+        <p class="text-stone-300 text-lg md:text-xl max-w-2xl mx-auto mb-12 animate-slide-up" style="animation-delay: 0.2s;">
+          Job searching is tough. We get it. Upload your resume and let us find opportunities that actually match your experience.
+        </p>
+
+        <!-- CTA -->
+        <div class="animate-slide-up" style="animation-delay: 0.3s;">
+          <a href="/upload" class="btn-primary text-lg group">
+            Begin Your Journey
+            <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+            </svg>
+          </a>
+          <p class="text-stone-500 text-sm mt-4">No signup required</p>
+        </div>
+
+        <!-- How it works steps -->
+        <div class="mt-20 animate-slide-up" style="animation-delay: 0.4s;">
+          <p class="text-stone-500 text-sm uppercase tracking-widest mb-8">How it works</p>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4 relative">
+            <!-- Connector lines (hidden on mobile) -->
+            <div class="hidden md:block absolute top-8 left-1/3 w-1/3 h-px bg-gradient-to-r from-accent-500/50 to-purple-500/50"></div>
+            <div class="hidden md:block absolute top-8 right-1/3 w-1/3 h-px bg-gradient-to-r from-purple-500/50 to-teal-500/50"></div>
+
+            <!-- Step 1 -->
+            <div class="text-center">
+              <div class="w-16 h-16 rounded-full bg-accent-500/10 border border-accent-500/30 flex items-center justify-center mx-auto mb-4 relative">
+                <span class="text-2xl font-bold text-accent-400">1</span>
+              </div>
+              <h3 class="text-lg font-semibold text-stone-100 mb-2">Upload Resume</h3>
+              <p class="text-stone-500 text-sm max-w-xs mx-auto">Drop your PDF, DOCX, or TXT. We'll extract your experience and skills.</p>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="text-center">
+              <div class="w-16 h-16 rounded-full bg-purple-500/10 border border-purple-500/30 flex items-center justify-center mx-auto mb-4">
+                <span class="text-2xl font-bold text-purple-400">2</span>
+              </div>
+              <h3 class="text-lg font-semibold text-stone-100 mb-2">Smart Analysis</h3>
+              <p class="text-stone-500 text-sm max-w-xs mx-auto">AI analyzes your career path and finds roles matching your actual experience level.</p>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="text-center">
+              <div class="w-16 h-16 rounded-full bg-teal-500/10 border border-teal-500/30 flex items-center justify-center mx-auto mb-4">
+                <span class="text-2xl font-bold text-teal-400">3</span>
+              </div>
+              <h3 class="text-lg font-semibold text-stone-100 mb-2">Real Matches</h3>
+              <p class="text-stone-500 text-sm max-w-xs mx-auto">Get jobs you can actually land, not aspirational listings you'll never hear back from.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 px-6 text-center animate-fade-in" style="animation-delay: 0.5s;">
+      <p class="text-stone-500 text-sm">
+        Every expert was once a beginner. Every journey starts with a single step.
+      </p>
+    </footer>
+
+  </div>
+
+</body>
+</html>
