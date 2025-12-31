@@ -15,9 +15,11 @@ JobAgent helps job seekers find positions that actually match their experience. 
 ## Features
 
 - Upload resumes in PDF, DOCX, or TXT format
-- Real job listings via JSearch API
+- Real job listings from multiple sources (LinkedIn, JSearch, Adzuna)
+- Parallel API calls for faster results using Promise.allSettled
 - Smart categorization: "Recommended" (90%+ confidence) and "Worth Exploring" (70-89%)
 - Privacy-focused: uploaded files are deleted after processing
+- Automatic fallback to mock data when APIs are unavailable
 - Dark theme UI inspired by candycode.com
 
 ## Tech Stack
@@ -25,7 +27,7 @@ JobAgent helps job seekers find positions that actually match their experience. 
 - **Backend:** Node.js, Express 5
 - **Frontend:** EJS templates, Tailwind CSS v4
 - **File Parsing:** pdf-parse, pdf2json, mammoth
-- **Job Data:** JSearch API (RapidAPI)
+- **Job Data:** LinkedIn API, JSearch API, Adzuna API (all optional with mock fallback)
 
 ## Getting Started
 
@@ -38,8 +40,8 @@ JobAgent helps job seekers find positions that actually match their experience. 
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/jagent.git
-cd jagent
+git clone https://github.com/varunkapoor109/J-Agent.git
+cd J-Agent
 
 # Install dependencies
 npm install
@@ -50,14 +52,31 @@ npm run build
 
 ### Configuration
 
-Create a `.env` file in the project root:
+Create a `.env` file in the project root (or copy from `.env.example`):
 
 ```env
 PORT=3001
-JSEARCH_API_KEY=your_jsearch_api_key_here
+NODE_ENV=development
+
+# Job APIs (all optional - app falls back to mock data if none configured)
+
+# LinkedIn Job Search API (RapidAPI)
+LINKEDIN_SCRAPER_API_KEY=your_linkedin_api_key
+
+# JSearch API (RapidAPI)
+JSEARCH_API_KEY=your_jsearch_api_key
+
+# Adzuna API
+ADZUNA_APP_ID=your_adzuna_app_id
+ADZUNA_APP_KEY=your_adzuna_app_key
 ```
 
-Get your JSearch API key from [RapidAPI](https://rapidapi.com/letscrape-6bRBa3QguO5/api/jsearch).
+Get your API keys from:
+- [LinkedIn Job Search API](https://rapidapi.com/fantastic-jobs-fantastic-jobs-default/api/linkedin-job-search-api) (RapidAPI)
+- [JSearch API](https://rapidapi.com/letscrape-6bRBa3QguO5/api/jsearch) (RapidAPI)
+- [Adzuna API](https://developer.adzuna.com/)
+
+**Note:** All API keys are optional. The app will use mock job data if no APIs are configured.
 
 ### Running the App
 
@@ -83,7 +102,7 @@ jagent/
 │   ├── server.js              # Express server and routes
 │   ├── services/
 │   │   ├── resumeParser.js    # PDF/DOCX/TXT parsing
-│   │   ├── jobSearch.js       # JSearch API integration
+│   │   ├── jobSearch.js       # Multi-source job API integration
 │   │   └── jobMatcher.js      # Job matching algorithm
 │   ├── views/
 │   │   ├── welcome.ejs        # Landing page
